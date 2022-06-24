@@ -1,0 +1,22 @@
+﻿@model MVCCalculator.Models.Calculator
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@using (Html.BeginForm())
+{
+    <div class="text-center">
+        <h1 class="display-4">Calculator</h1>
+        <p><label>Number-1</label></p>
+        <p><input  asp-for="value1"/></p>
+        <p><label>Number-2</label></p>
+        <p><input type="number" asp-for="value2" /></p>
+        <input type="submit" value="add" name="add" class="btn btn-info" asp-for="calculate" />
+        <input type="submit" value="sub" class="btn btn-info" asp-for="calculate" />
+        <input type="submit" value="mul" class="btn btn-info" asp-for="calculate" />
+        <input type="submit" value="div" class="btn btn-info" asp-for="calculate" />
+        <p><label>Result</label></p>
+       @* <p><input type="number"   value="@ViewBag.res"/></p>*@
+        <p><input  value=@Model.result /></p>
+    </div>
+}
